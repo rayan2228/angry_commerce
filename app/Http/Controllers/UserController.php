@@ -60,7 +60,7 @@ class UserController extends Controller
             'email_verified_at' => Carbon::now(),
             'created_at' => Carbon::now()
         ]);
-        Mail::to($request->email)->send(new CreateUser(auth()->guard('admin')->user()->name, $request->email, $random_password));
+        Mail::to($request->email)->send(new CreateUser(auth()->guard('admin')->user()->name, $request->email, $random_password,$request->role));
         return back()->with("user_add", "user added successfully");
     }
     /**
@@ -107,4 +107,5 @@ class UserController extends Controller
     {
         //
     }
+
 }

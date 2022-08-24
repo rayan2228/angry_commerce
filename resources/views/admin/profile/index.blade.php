@@ -40,7 +40,7 @@
                     <div class="pt-3">
                         <div class="settings-form">
                             <h4 class="text-primary">Account Setting</h4>
-                            <form action="{{ route('admin.profile.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('profile.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group col-md-6">

@@ -19,13 +19,13 @@ class CategoryController extends Controller
     {
         $search = $request->search ?? "";
         $category_count = Category::count();
-        $top_category_count = Category::where("category_type","top_category")->count();
+        $top_category_count = Category::where("category_type", "top_category")->count();
         if ($search) {
             $categories = Category::where("category_name", "LIKE", "%$search%")->orWhere("category_type", "LIKE", "%$search%")->Paginate(2);
         } else {
             $categories = Category::Paginate(2);;
         }
-        return view('admin.category.index', compact("categories","search","category_count","top_category_count"));
+        return view('admin.category.index', compact("categories", "search", "category_count", "top_category_count"));
     }
 
     /**
@@ -69,7 +69,7 @@ class CategoryController extends Controller
                 "category_image" => $category_image_name,
                 "created_at" => Carbon::now(),
             ]);
-        }else{
+        } else {
             Category::insert([
                 "category_name" => $request->category_name,
                 "category_slug" => $slug,
@@ -148,7 +148,7 @@ class CategoryController extends Controller
                 "status" => $request->category_status,
                 "category_type" => $request->category_type,
             ]);
-        }else{
+        } else {
             $category->update([
                 "category_name" => $request->category_name,
                 "category_slug" => $slug,
@@ -170,5 +170,26 @@ class CategoryController extends Controller
     {
         $category->delete();
         return redirect(route('admin.category.index'));
+    }
+    public function trash(Request $request)
+    {
+        $search = $request->search ?? "";
+        $category_count = Category::onlyTrashed()->count();
+        $top_category_count = Category::onlyTrashed()->where("category_type", "top_category")->count();
+        if ($search) {
+            $categories = Category::where(
+                "category_name",
+                "LIKE",
+                "%$search%"
+            )->onlyTrashed()->orWhere("category_type", "LIKE", "%$search%")->onlyTrashed()->Paginate(2);
+        } else {
+            $categories = Category::onlyTrashed()->Paginate(2);;
+        }
+        return view('admin.category.trash', compact("categories", "search", "category_count", "top_category_count"));
+    }
+    public function restore($category)
+    {
+        Category::onlyTrashed()->find($category)->restore();
+        return back();
     }
 }

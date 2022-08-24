@@ -173,4 +173,21 @@ class BrandController extends Controller
         $brand->delete();
         return redirect(route('admin.brand.index'));
     }
+    public function trash(Request $request)
+    {
+        $search = $request->search ?? "";
+        $brand_count = Brand::onlyTrashed()->count();
+        $popular_brand_count = Brand::onlyTrashed()->where("brand_type", "popular_brand")->count();
+        if ($search) {
+            $brands = Brand::where("brand_name", "LIKE", "%$search%")->onlyTrashed()->orWhere("brand_type", "LIKE", "%$search%")->onlyTrashed()->Paginate(2);
+        } else {
+            $brands = Brand::onlyTrashed()->Paginate(2);
+        }
+        return view('admin.brand.trash', compact("brands", "search", "brand_count", "popular_brand_count"));
+    }
+    public function restore($brand)
+    {
+        Brand::onlyTrashed()->find($brand)->restore();
+        return back();
+    }
 }

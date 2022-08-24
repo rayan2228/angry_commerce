@@ -179,7 +179,7 @@
                         <ul aria-expanded="false">
                             <li><a href="{{ route('admin.category.index') }}">Categories List</a></li>
                             <li><a href="{{ route('admin.category.create') }}">Add Categories</a></li>
-                            {{-- <li><a href="{{ route('admin.category.delet') }}">Add Category</a></li> --}}
+                            <li><a href="{{ route('admin.category.trash') }}">Trash</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
@@ -189,7 +189,7 @@
                         <ul aria-expanded="false">
                             <li><a href="{{ route('admin.brand.index') }}">Brands List</a></li>
                             <li><a href="{{ route('admin.brand.create') }}">Add Brands</a></li>
-                            {{-- <li><a href="{{ route('admin.category.delet') }}">Add Category</a></li> --}}
+                            <li><a href="{{ route('admin.brand.trash') }}">Trash</a></li>
                         </ul>
                     </li>
                 </ul>

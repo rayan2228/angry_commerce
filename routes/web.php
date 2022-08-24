@@ -33,10 +33,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin', 'as' => 'admin.
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
-    Route::resource('/user',UserController::class);
     Route::resource('/profile', ProfileController::class);
+    Route::get('/category/trash',[CategoryController::class,'trash'])->name("category.trash");
+    Route::get('/category/restore/{category}',[CategoryController::class,'restore'])->name("category.restore");
     Route::resource('/category', CategoryController::class);
+    Route::get('/brand/trash',[BrandController::class,'trash'])->name("brand.trash");
+    Route::get('/brand/restore/{brand}',[BrandController::class,'restore'])->name("brand.restore");
     Route::resource('/brand', BrandController::class);
+    Route::resource('/user', UserController::class);
 });
-
 require __DIR__ . '/admin_auth.php';

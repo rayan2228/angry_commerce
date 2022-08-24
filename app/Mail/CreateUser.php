@@ -11,17 +11,18 @@ class CreateUser extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected $created_by, $email, $password;
+    protected $created_by, $email, $password,$role;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($created_by,$email,$password)
+    public function __construct($created_by,$email,$password,$role)
     {
         $this->created_by = $created_by;
         $this->email = $email;
         $this->password = $password;
+        $this->role = $role;
     }
 
     /**
@@ -35,6 +36,7 @@ class CreateUser extends Mailable
             'created_by'=> $this->created_by,
             'email'=> $this->email,
             'password'=> $this->password,
+            'role'=> $this->role,
         ]);
     }
 }

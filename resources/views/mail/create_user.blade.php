@@ -6,6 +6,7 @@ Your account has been created by {{ $created_by }}!
 @component('mail::panel')
 # Email = {{ $email }}
 # Password = {{ $password }}
+# Role = {{ $role }}
 @endcomponent
 
 Thanks,<br>
