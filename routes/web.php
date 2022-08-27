@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
@@ -33,7 +34,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin', 'as' => 'admin.
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
-    Route::resource('/profile', ProfileController::class);
+    Route::resource('/adminprofile',AdminProfileController::class);
     Route::get('/category/trash',[CategoryController::class,'trash'])->name("category.trash");
     Route::get('/category/restore/{category}',[CategoryController::class,'restore'])->name("category.restore");
     Route::resource('/category', CategoryController::class);

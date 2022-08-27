@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-
+use App\Models\AdminProfile;
 
 class Admin extends Authenticatable 
 {
@@ -25,7 +25,6 @@ class Admin extends Authenticatable
         'name',
         'email',
         'password',
-
     ];
 
     /**
@@ -46,5 +45,10 @@ class Admin extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new adminPasswordResetLinkNotification($token));
+    }
+
+    public function admin_profiles()
+    {
+        return $this->hasOne(AdminProfile::class);
     }
 }

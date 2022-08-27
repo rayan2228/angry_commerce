@@ -13,9 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('profiles', function (Blueprint $table) {
+        Schema::create('admin_profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('');
+            $table->foreignId('admin_id')->constrained('admins');
+            $table->text('bio')->nullable();
+            $table->string('address')->nullable();
+            $table->string('profile_photo')->nullable();
+            $table->string('cover_photo')->nullable();
+            $table->string('phone_number')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profiles');
+        Schema::dropIfExists('admin_profiles');
     }
 };

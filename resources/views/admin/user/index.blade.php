@@ -44,7 +44,6 @@
                     <table class="table  table-striped">
                         <thead>
                             <tr>
-                                {{-- <th>Profile Photo</th> --}}
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Role</th>
@@ -53,11 +52,10 @@
                         </thead>
                         <tbody>
                             @foreach ($editors as $editor)
+                                @if ($editor->id === Auth::guard('admin')->id())
+                                    @continue
+                                @endif
                                 <tr>
-                                    {{-- <td>
-                                        <img src="{{ asset('uploads/profile') }}/" alt="">
-                                        
-                                    </td> --}}
                                     <td>
                                         <h6>{{ $editor->name }}</h6>
 
@@ -67,11 +65,11 @@
 
                                     </td>
                                     <td>
-                                        <h6 class="badge @if ($editor->role === 'admin')
-                                            badge-success
+                                        <h6
+                                            class="badge @if ($editor->role === 'admin') badge-success
                                             @else
-                                            badge-danger
-                                        @endif ">{{ $editor->role }}</h6>
+                                            badge-danger @endif ">
+                                            {{ $editor->role }}</h6>
 
                                     </td>
                                     <td>

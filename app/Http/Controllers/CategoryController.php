@@ -113,6 +113,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
+        return $category;
         $request->validate([
             "category_name" => "required | unique:categories,category_name",
             "category_image" => "mimes:png,jpg"
