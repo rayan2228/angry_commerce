@@ -2,11 +2,10 @@
 
 @section('content')
     <!-- main body - start
-                ================================================== -->
-    <main>
-
-        <!-- sidebar cart - start
                     ================================================== -->
+    <main>
+        <!-- sidebar cart - start
+                        ================================================== -->
         <div class="sidebar-menu-wrapper">
             <div class="cart_sidebar">
                 <button type="button" class="close_btn"><i class="fal fa-times"></i></button>
@@ -71,10 +70,10 @@
             <div class="cart_overlay"></div>
         </div>
         <!-- sidebar cart - end
-                    ================================================== -->
+                        ================================================== -->
 
         <!-- slider_section - start
-                    ================================================== -->
+                        ================================================== -->
         <section class="slider_section">
             <div class="container">
                 <div class="row">
@@ -134,10 +133,10 @@
             </div>
         </section>
         <!-- slider_section - end
-                    ================================================== -->
+                        ================================================== -->
 
         <!-- policy_section - start
-                    ================================================== -->
+                        ================================================== -->
         <section class="policy_section">
             <div class="container">
                 <div class="row">
@@ -198,11 +197,11 @@
 
         </section>
         <!-- policy_section - end
-                    ================================================== -->
+                        ================================================== -->
 
 
         <!-- products-with-sidebar-section - start
-                    ================================================== -->
+                        ================================================== -->
         <section class="products-with-sidebar-section">
             <div class="container">
                 <div class="row">
@@ -693,11 +692,11 @@
             </div> <!-- end container  -->
         </section>
         <!-- products-with-sidebar-section - end
-                    ================================================== -->
+                        ================================================== -->
 
 
         <!-- promotion_section - start
-                    ================================================== -->
+                        ================================================== -->
         <section class="promotion_section">
             <div class="container">
                 <div class="row promotion_banner_wrap">
@@ -732,10 +731,10 @@
             </div>
         </section>
         <!-- promotion_section - end
-                    ================================================== -->
+                        ================================================== -->
 
         <!-- new_arrivals_section - start
-                    ================================================== -->
+                        ================================================== -->
         <section class="new_arrivals_section section_space">
             <div class="container">
                 <div class="sec-title-link">
@@ -872,10 +871,10 @@
             </div>
         </section>
         <!-- new_arrivals_section - end
-                    ================================================== -->
+                        ================================================== -->
 
         <!-- brand_section - start
-                    ================================================== -->
+                        ================================================== -->
         <div class="brand_section pb-0">
             <div class="container">
                 <div class="brand_carousel">
@@ -891,10 +890,10 @@
             </div>
         </div>
         <!-- brand_section - end
-                    ================================================== -->
+                        ================================================== -->
 
         <!-- viewed_products_section - start
-                    ================================================== -->
+                        ================================================== -->
         <section class="viewed_products_section section_space">
             <div class="container">
 
@@ -1129,10 +1128,10 @@
             </div>
         </section>
         <!-- viewed_products_section - end
-                    ================================================== -->
+                        ================================================== -->
 
         <!-- newsletter_section - start
-                    ================================================== -->
+                        ================================================== -->
         <section class="newsletter_section">
             <div class="container">
                 <div class="row align-items-center">
@@ -1152,9 +1151,9 @@
             </div>
         </section>
         <!-- newsletter_section - end
-                    ================================================== -->
+                        ================================================== -->
 
     </main>
     <!-- main body - end
-                ================================================== -->
+                    ================================================== -->
 @endsection

@@ -20,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/about', [HomeController::class, 'about_us'])->name('about_us');
+Route::get('/contact', [HomeController::class, 'contact_us'])->name('contact_us');
+Route::post('/contact', [HomeController::class, 'contact_message'])->name('contact_message');
 
 // customer routes
 Route::get('/dashboard', function () {

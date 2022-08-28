@@ -160,7 +160,6 @@
                         <ul aria-expanded="false">
                             <li><a href="{{ route('home') }}" target="_black">visit site</a></li>
                             <li><a href="workout-statistic.html">visit shop</a></li>
-                            <li><a href="workoutplan.html">admin settings</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
