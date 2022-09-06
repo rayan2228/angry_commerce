@@ -47,3 +47,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin', 'as' => 'admin.
     Route::resource('/user', UserController::class);
 });
 require __DIR__ . '/admin_auth.php';
+
+
+require __DIR__ . '/vendor.php';
